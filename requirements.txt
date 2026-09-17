@@ -1,0 +1,14 @@
+langchain
+langchain-community
+langchain-text-splitters
+langchain-chroma
+chromadb
+pypdf
+langchain-ollama
+ollama
+rank-bm25
+numpy
+pandas
+streamlit
+jupyter
+notebook

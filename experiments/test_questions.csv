@@ -1,0 +1,11 @@
+question
+What is LoRA and how does it reduce trainable parameters?
+What is the main idea behind the Transformer architecture?
+What is Retrieval-Augmented Generation?
+How does RAG improve knowledge-intensive NLP tasks?
+What is QLoRA?
+How does QLoRA reduce memory requirements?
+What is the purpose of attention in the Transformer?
+What are the advantages of low-rank adaptation?
+How does LoRA differ from full fine-tuning?
+What problem does Retrieval-Augmented Generation solve?
