@@ -6,7 +6,11 @@ An AI-powered Research Paper Question Answering system built using Retrieval-Aug
 
 The system answers questions from selected Generative AI research papers using semantic retrieval, hybrid search, reranking, and a local Large Language Model.
 
+The system retrieves relevant research-paper content from a vector database and uses the retrieved context to generate grounded answers.
+
 ## 📄 Research Papers
+
+The dataset contains four seminal Generative AI research papers:
 
 1. LoRA: Low-Rank Adaptation of Large Language Models
 2. QLoRA: Efficient Finetuning of Quantized LLMs
@@ -20,75 +24,48 @@ The system answers questions from selected Generative AI research papers using s
 - ChromaDB
 - Ollama
 - Nomic Embed Text
+- mxbai-embed-large
 - Gemma 3 1B
 - BM25
 - Cosine Similarity
 - Streamlit
-- RAG
+- Retrieval-Augmented Generation (RAG)
 
-## 🔄 RAG Pipeline
-
-PDF Research Papers
-→ Document Loading
-→ Text Chunking
-→ Embedding Generation
-→ ChromaDB
-→ Dense / MMR / Hybrid Retrieval
-→ Cosine Similarity Reranking
-→ Context Creation
-→ Gemma 3 1B
-→ Grounded Answer
-→ Top-3 Sources
-
-## 🔎 Retrieval Methods
-
-### Dense Retrieval
-Uses semantic similarity between query and document embeddings.
-
-### MMR Retrieval
-Retrieves relevant and diverse document chunks.
-
-### Hybrid Search
-Combines Dense Retrieval with BM25 keyword search.
-
-### Cosine Similarity Reranking
-Reranks retrieved documents based on embedding similarity.
-
-## 📊 Project Statistics
+## 📊 Dataset Statistics
 
 - Research Papers: 4
 - Total Pages: 86
 - Total Chunks: 649
 - Embedding Models Tested: 2
 - Test Questions: 10
-- LLM: Gemma 3 1B
 - Vector Database: ChromaDB
+- LLM: Gemma 3 1B
 
-## ✨ Features
+## 🔄 RAG Pipeline
 
-- Research paper question answering
-- Top-3 source attribution
-- Page number citation
-- Multiple retrieval methods
-- Conversational memory
-- Failure case handling
-- Streamlit web interface
-
-## 🚀 How to Run
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-## 🔬 Embedding Experiment
-
-Two embedding models were experimentally evaluated in the local environment:
-
-- Nomic Embed Text
-- mxbai-embed-large
-
-Both models were executed locally through Ollama.
-
-### Limitation
-
-A commercial embedding API was not evaluated because an external commercial API key was not available in the development environment. Therefore, the project reports only the embedding models that were actually executed and tested.
+```text
+PDF Research Papers
+        ↓
+Document Loading
+        ↓
+Text Chunking
+        ↓
+Embedding Generation
+        ↓
+ChromaDB Vector Database
+        ↓
+Dense / MMR Retrieval
+        ↓
+BM25 Keyword Retrieval
+        ↓
+Hybrid Retrieval
+        ↓
+Cosine Similarity Reranking
+        ↓
+Context Creation
+        ↓
+Gemma 3 1B
+        ↓
+Grounded Answer
+        ↓
+Top-3 Sources + Page Numbers
